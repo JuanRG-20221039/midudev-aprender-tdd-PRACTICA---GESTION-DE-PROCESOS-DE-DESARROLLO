@@ -16,3 +16,7 @@ jobs:
     steps:
       - name: hola mundo
         run: echo "Hola mundo :D"
+      - name: mostrar fecha actual
+        run: date
+      - name: mostrar contenido del directorio
+        run: ls -la
