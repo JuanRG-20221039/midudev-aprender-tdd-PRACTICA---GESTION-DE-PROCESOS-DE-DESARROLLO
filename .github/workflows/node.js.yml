@@ -12,12 +12,16 @@ jobs:
   trabajo1:
 
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
     name: Trabajo 1
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
           cache: 'npm'
       - run: npm ci --legacy-peer-deps --no-audit --no-fund
       - run: npm run lint
